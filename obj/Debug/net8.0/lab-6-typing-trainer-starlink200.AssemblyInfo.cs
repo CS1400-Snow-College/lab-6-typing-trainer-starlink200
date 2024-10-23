@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lab-6-typing-trainer-starlink200")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a5f75596def6456850c0aff582b2e790a1fb332")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+686faeaa7b7912617a0e4b840f01a9e5dcd92783")]
 [assembly: System.Reflection.AssemblyProductAttribute("lab-6-typing-trainer-starlink200")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lab-6-typing-trainer-starlink200")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

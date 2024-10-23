@@ -1,19 +1,51 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System.Security.AccessControl;
+using System.Security.Cryptography.X509Certificates;
+Console.Clear();
+Console.ForegroundColor = ConsoleColor.White;
 Random rand = new Random();
+int originX = Console.CursorLeft;
+int originY = Console.CursorTop;
 Console.WriteLine("Hello! This program will allow you to practice your typing ability");
-string[] paragraphChoices = {"Words per minute (WPM) is a measure of typing speed, commonly used in recruitment. For the purposes of WPM measurement a word is standardized to five characters or keystrokes. Therefore, \"brown\" counts as one word, but \"accounted\" counts as two. The benefits of a standardized measurement of input speed are that it enables comparison across language and hardware boundaries. The speed of an Afrikaans-speaking operator in Cape Town can be compared with a French-speaking operator in Paris.",
-"Two competing software companies, AlphaTech and Beta Solutions, were constantly vying for market share. After years of rivalry, their CEOs, Mark and Lisa, found themselves seated next to each other on a long flight. They struck up a conversation, discovering shared frustrations with industry challenges. This chance encounter led to a groundbreaking partnership. By combining their strengths, AlphaTech and Beta Solutions developed a revolutionary product that captured 50% of the market within a year, proving that sometimes, collaboration can be more powerful than competition."};
-int randParagraph = rand.Next(0,2);
-string paragraph = paragraphChoices[randParagraph];
-Console.WriteLine(paragraph);
-for(int i = 0; i < paragraph.Length; i++)
+Console.WriteLine("Press any key when you are ready to start");
+Console.ReadKey();
+Console.Clear();
+int randParagraph = rand.Next(1,4);
+string paragraph = "";
+switch(randParagraph)
 {
-    if(paragraph[i].Equals(Console.ReadKey()))
-    {
-        Console.WriteLine("this is working so far");
-    }
-    else{
-        Console.WriteLine("is not working");
-    }
-    
+    case 1:
+        paragraph = File.ReadAllText(@"Paragraph1.txt");
+        break;
+    case 2:
+        paragraph = File.ReadAllText(@"Paragraph2.txt");
+        break;
+    default:
+        paragraph = File.ReadAllText(@"Paragraph3.txt");
+        break;
 }
+Console.WriteLine(paragraph);
+Console.SetCursorPosition(originX, originY);
+int numCorrect = 0;
+int numIncorrect = 0;
+//char typedChar = Console.ReadKey(true).KeyChar;
+for(int i = 0; i < paragraph.Length - 1; i++)
+{
+    char typedChar = Console.ReadKey(true).KeyChar;
+    if(typedChar == paragraph[i])
+    {
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.Write(paragraph[i]);
+        numCorrect++;
+    }
+    else
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.Write(paragraph[i]);
+        numIncorrect++;
+    }
+}
+Console.Clear();
+int accuracy = numCorrect/paragraph.Length;
+Console.WriteLine($"you had {accuracy*100}% accuracy!");
+
