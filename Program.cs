@@ -3,20 +3,21 @@ using System.Security.AccessControl;
 using System.Security.Cryptography.X509Certificates;
 using System.Diagnostics;
 bool repeat = true;
+Random rand = new Random();
+
 while(repeat)
 {
     repeat = false;
     Console.Clear();
     Console.ForegroundColor = ConsoleColor.White;
     Stopwatch stopwatch = new Stopwatch();
-    Random rand = new Random();
-    int originX = Console.CursorLeft;
-    int originY = Console.CursorTop;
     Console.WriteLine("Hello! This program will allow you to practice your typing ability by timing your typing speed and accuracy");
     Console.WriteLine("Press any key when you are ready to start");
     Console.ReadKey();
     stopwatch.Start();
+
     Console.Clear();
+    //create a random number to help choose which paragraph to use
     int randParagraph = rand.Next(1,6);
     string paragraph = "";
     //create a string that will include the words that the user types
@@ -40,15 +41,19 @@ while(repeat)
             paragraph = File.ReadAllText(@"Paragraph3.txt");
             break;
     }
+    int originX = Console.CursorLeft;
+    int originY = Console.CursorTop;
     Console.WriteLine(paragraph);
     Console.SetCursorPosition(originX, originY);
+
     int numCorrect = 0;
     int numIncorrect = 0;
     double elapsedSeconds = 0;
+
     for(int i = 0; i < paragraph.Length - 1; i++)
     {
         char typedChar = Console.ReadKey(true).KeyChar;
-        elapsedSeconds = stopwatch.ElapsedMilliseconds /  1000;
+        elapsedSeconds = stopwatch.ElapsedMilliseconds / 1000;
         if(typedChar == paragraph[i])
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -69,7 +74,9 @@ while(repeat)
         } 
     }
     stopwatch.Stop();
+
     Console.Clear();
+    Console.ForegroundColor = ConsoleColor.White;
     //split the number of characters typed into words to know how many words were typed roughly
     string[] wordsTyped = typedParagraph.Split();
     //accuracy is only tested against the number of characters that they actually managed to type
@@ -77,6 +84,8 @@ while(repeat)
     double wpm = wordsTyped.Count() / (elapsedSeconds/60);
     Console.WriteLine($"You had {accuracy*100:##.#}% accuracy!");
     Console.WriteLine($"And you typed {wpm} WPM");
+    
+    //while loop asking user if they want to play again, only accepting 4 values, 1, yes, 2, no
     bool invalidAnswer = true;
     while(invalidAnswer)
     {
