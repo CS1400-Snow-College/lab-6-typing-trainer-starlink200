@@ -17,7 +17,7 @@ while(repeat)
     Console.ReadKey();
     stopwatch.Start();
     Console.Clear();
-    int randParagraph = rand.Next(1,4);
+    int randParagraph = rand.Next(1,6);
     string paragraph = "";
     //create a string that will include the words that the user types
     string typedParagraph = "";
@@ -29,6 +29,12 @@ while(repeat)
             break;
         case 2:
             paragraph = File.ReadAllText(@"Paragraph2.txt");
+            break;
+        case 4:
+            paragraph = File.ReadAllText(@"Paragraph4.txt");
+            break;
+        case 5:
+            paragraph = File.ReadAllText(@"Paragraph5.txt");
             break;
         default:
             paragraph = File.ReadAllText(@"Paragraph3.txt");
