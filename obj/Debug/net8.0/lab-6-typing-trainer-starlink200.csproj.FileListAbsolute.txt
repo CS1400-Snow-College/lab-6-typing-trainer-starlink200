@@ -1,0 +1,15 @@
+C:\Users\caleb\my-code-dir\lab-6-typing-trainer-starlink200\bin\Debug\net8.0\lab-6-typing-trainer-starlink200.exe
+C:\Users\caleb\my-code-dir\lab-6-typing-trainer-starlink200\bin\Debug\net8.0\lab-6-typing-trainer-starlink200.deps.json
+C:\Users\caleb\my-code-dir\lab-6-typing-trainer-starlink200\bin\Debug\net8.0\lab-6-typing-trainer-starlink200.runtimeconfig.json
+C:\Users\caleb\my-code-dir\lab-6-typing-trainer-starlink200\bin\Debug\net8.0\lab-6-typing-trainer-starlink200.dll
+C:\Users\caleb\my-code-dir\lab-6-typing-trainer-starlink200\bin\Debug\net8.0\lab-6-typing-trainer-starlink200.pdb
+C:\Users\caleb\my-code-dir\lab-6-typing-trainer-starlink200\obj\Debug\net8.0\lab-6-typing-trainer-starlink200.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\caleb\my-code-dir\lab-6-typing-trainer-starlink200\obj\Debug\net8.0\lab-6-typing-trainer-starlink200.AssemblyInfoInputs.cache
+C:\Users\caleb\my-code-dir\lab-6-typing-trainer-starlink200\obj\Debug\net8.0\lab-6-typing-trainer-starlink200.AssemblyInfo.cs
+C:\Users\caleb\my-code-dir\lab-6-typing-trainer-starlink200\obj\Debug\net8.0\lab-6-typing-trainer-starlink200.csproj.CoreCompileInputs.cache
+C:\Users\caleb\my-code-dir\lab-6-typing-trainer-starlink200\obj\Debug\net8.0\lab-6-typing-trainer-starlink200.sourcelink.json
+C:\Users\caleb\my-code-dir\lab-6-typing-trainer-starlink200\obj\Debug\net8.0\lab-6-typing-trainer-starlink200.dll
+C:\Users\caleb\my-code-dir\lab-6-typing-trainer-starlink200\obj\Debug\net8.0\refint\lab-6-typing-trainer-starlink200.dll
+C:\Users\caleb\my-code-dir\lab-6-typing-trainer-starlink200\obj\Debug\net8.0\lab-6-typing-trainer-starlink200.pdb
+C:\Users\caleb\my-code-dir\lab-6-typing-trainer-starlink200\obj\Debug\net8.0\lab-6-typing-trainer-starlink200.genruntimeconfig.cache
+C:\Users\caleb\my-code-dir\lab-6-typing-trainer-starlink200\obj\Debug\net8.0\ref\lab-6-typing-trainer-starlink200.dll

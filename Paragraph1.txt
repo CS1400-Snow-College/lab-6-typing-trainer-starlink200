@@ -1,0 +1,4 @@
+Words per minute (WPM) is a measure of typing speed, commonly used in recruitment. For the purposes of WPM measurement a word is
+standardized to five characters or keystrokes. Therefore, "brown" counts as one word, but "accounted" counts as two. The
+benefits of a standardized measurement of input speed are that it enables comparison across language and hardware boundaries.
+The speed of an Afrikaans-speaking operator in Cape Town can be compared with a French-speaking operator in Paris.
