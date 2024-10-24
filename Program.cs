@@ -59,6 +59,7 @@ while(repeat)
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write(paragraph[i]);
             numCorrect++;
+            typedParagraph += paragraph[i];
         }
         else
         {
@@ -66,22 +67,20 @@ while(repeat)
             Console.Write(paragraph[i]);
             numIncorrect++;
         }
-        typedParagraph += paragraph[i];
         // force the loop to break once 60 seconds have elapsed
         if(elapsedSeconds == 60)
         {
             i = paragraph.Length;
-        } 
+        }
     }
     stopwatch.Stop();
 
     Console.Clear();
     Console.ForegroundColor = ConsoleColor.White;
-    //split the number of characters typed into words to know how many words were typed roughly
-    string[] wordsTyped = typedParagraph.Split();
     //accuracy is only tested against the number of characters that they actually managed to type
     double accuracy = (double) numCorrect/typedParagraph.Length;
-    double wpm = wordsTyped.Count() / (elapsedSeconds/60);
+    //the standardized way to count words is every 5 characters is one "word" so the number of characters in typedParagraph by 5
+    double wpm = (typedParagraph.Length / 5) / (elapsedSeconds/60);
     Console.WriteLine($"You had {accuracy*100:##.#}% accuracy!");
     Console.WriteLine($"And you typed {wpm} WPM");
     
