@@ -20,25 +20,25 @@ while(repeat)
     //create a random number to help choose which paragraph to use
     int randParagraph = rand.Next(1,6);
     string paragraph = "";
-    //create a string that will include the words that the user types
-    string typedParagraph = "";
+    //create a count that will increase for every typed character
+    int numTyped = 0;
     //switch statement which uses the randParagraph integer to randomly select a training paragraph
     switch(randParagraph)
     {
         case 1:
-            paragraph = File.ReadAllText(@"Paragraph1.txt");
+            paragraph = File.ReadAllText(@"ParagraphChoices/Paragraph1.txt");
             break;
         case 2:
-            paragraph = File.ReadAllText(@"Paragraph2.txt");
+            paragraph = File.ReadAllText(@"ParagraphChoices/Paragraph2.txt");
             break;
         case 4:
-            paragraph = File.ReadAllText(@"Paragraph4.txt");
+            paragraph = File.ReadAllText(@"ParagraphChoices/Paragraph4.txt");
             break;
         case 5:
-            paragraph = File.ReadAllText(@"Paragraph5.txt");
+            paragraph = File.ReadAllText(@"ParagraphChoices/Paragraph5.txt");
             break;
         default:
-            paragraph = File.ReadAllText(@"Paragraph3.txt");
+            paragraph = File.ReadAllText(@"ParagraphChoices/Paragraph3.txt");
             break;
     }
     int originX = Console.CursorLeft;
@@ -59,7 +59,6 @@ while(repeat)
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write(paragraph[i]);
             numCorrect++;
-            typedParagraph += paragraph[i];
         }
         else
         {
@@ -67,8 +66,9 @@ while(repeat)
             Console.Write(paragraph[i]);
             numIncorrect++;
         }
+        numTyped++;
         // force the loop to break once 60 seconds have elapsed
-        if(elapsedSeconds == 60)
+        if(elapsedSeconds >= 60)
         {
             i = paragraph.Length;
         }
@@ -78,9 +78,9 @@ while(repeat)
     Console.Clear();
     Console.ForegroundColor = ConsoleColor.White;
     //accuracy is only tested against the number of characters that they actually managed to type
-    double accuracy = (double) numCorrect/typedParagraph.Length;
+    double accuracy = (double) numCorrect/numTyped;
     //the standardized way to count words is every 5 characters is one "word" so the number of characters in typedParagraph by 5
-    double wpm = (typedParagraph.Length / 5) / (elapsedSeconds/60);
+    double wpm = (numCorrect / 5) / (elapsedSeconds/60);
     Console.WriteLine($"You had {accuracy*100:##.#}% accuracy!");
     Console.WriteLine($"And you typed {wpm} WPM");
     
